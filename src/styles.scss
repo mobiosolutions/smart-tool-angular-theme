@@ -1,1 +1,506 @@
-/* You can add global styles to this file, and also import other style files */
+/*font-family: 'Noto Sans', sans-serif;*/
+
+/*variables:*/
+$primary: #1E1E21;
+$secondary: #FF6539;
+$white: #ffffff;
+$grey: #8E8E8E;
+$blue: #3232CC;
+
+
+// /*mixins*/
+@mixin anim($property){
+	transition: $property ease-in-out all;
+	-webkit-transition: $property ease-in-out all;
+	-moz-transition: $property ease-in-out all;
+	-ms-transition: $property ease-in-out all;
+	-o-transition: $property ease-in-out all;
+}
+@mixin rotate($property){
+	transform: rotate($property);
+	-webkit-transform: rotate($property);
+	-moz-transform: rotate($property);
+	-ms-transform: rotate($property);
+	-o-transform: rotate($property);
+}
+@mixin rotateY($property){
+	transform: rotateY($property);
+	-webkit-transform: rotateY($property);
+	-moz-transform: rotateY($property);
+	-ms-transform: rotateY($property);
+	-o-transform: rotateY($property);
+}
+@mixin trans($propertyX, $propertyY){
+	transform: translate($propertyX, $propertyY);
+	-webkit-transform: translate($propertyX, $propertyY);
+	-moz-transform: translate($propertyX, $propertyY);
+	-ms-transform: translate($propertyX, $propertyY);
+	-o-transform: translate($propertyX, $propertyY);
+}
+@mixin scale($propertyX, $propertyY){
+	transform: scale($propertyX, $propertyY);
+	-webkit-transform: scale($propertyX, $propertyY);
+	-moz-transform: scale($propertyX, $propertyY);
+	-ms-transform: scale($propertyX, $propertyY);
+	-o-transform: scale($propertyX, $propertyY);
+}
+
+@mixin min-width-1200{
+	@media (min-width: 1200px){ 
+		@content; 
+	}
+}
+@mixin min-width-1440{
+	@media (min-width: 1440px){ 
+		@content; 
+	}
+}
+@mixin max-width-1440{
+	@media (max-width: 1440px){ 
+		@content; 
+	}
+}
+@mixin max-width-1199{
+	@media (max-width: 1199px){ 
+		@content; 
+	}
+}
+@mixin max-width-991{
+	@media (max-width: 991px){ 
+		@content; 
+	}
+}
+@mixin max-width-767{
+	@media (max-width: 767px){ 
+		@content; 
+	}
+}
+@mixin max-width-480{
+	@media (max-width: 480px){ 
+		@content; 
+	}
+}
+
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
+
+html{
+	scroll-behavior: smooth;
+}
+body{
+	overflow-x: hidden;
+	font-size: 16px;
+	font-weight: 400;
+	color: $primary;
+	font-family: 'Noto Sans', sans-serif;
+	scroll-behavior: smooth;
+	overflow-x: hidden;
+	*:focus, *:hover{
+		text-decoration: none !important;
+		outline: none;
+	}
+	.btn{
+		&:focus, &:active{
+			box-shadow: none;
+		}
+	}
+	&.fixbody{
+		overflow: hidden;
+		.overlay{
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+	.container{
+		@include min-width-1440{
+			max-width: 1366px;
+		}
+	}
+	p{
+		margin: 0;
+	}
+	ul{
+		padding: 0;
+		margin: 0;
+	}
+	.overlay{
+		background: rgba(26, 44, 39, 0.34);
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		margin: auto;
+		visibility: hidden;
+		z-index: 9;
+		opacity: 0;
+		@include anim(0.2s);
+	}
+	.comPadding{
+		padding: 100px 0;
+		@include max-width-1440{
+			padding: 80px 0;
+		}
+		@include max-width-1199{
+			padding: 60px 0;
+		}
+		@include max-width-991{
+			padding: 40px 0;
+		}
+		@include max-width-767{
+			padding: 30px 0;
+		}
+	}
+	.modal{
+		&.show{
+			.modal-dialog{
+				transform: translate(0, -50%) scale(1,1) !important;
+			}
+		}
+		.modal-dialog{
+			@include anim(0.3s);
+			transform: translate(0, -50%) scale(0,0) !important;
+			top: 50%;
+			position: relative;
+			margin: 0 auto;
+			.modal-content{
+				border: 0;
+			}
+		}
+	}
+	.comTitle{
+		text-align: center;
+		font-size: 66px;
+		line-height: 78px;
+		font-weight: 700;
+		color: $primary;
+		@include max-width-1440{
+			font-size: 50px;
+			line-height: 62px;
+		}
+		@include max-width-1199{
+			font-size: 40px;
+			line-height: 50px;
+		}
+		@include max-width-991{
+			font-size: 32px;
+			line-height: 40px;
+		}
+		@include max-width-767{
+			font-size: 26px;
+			line-height: 32px;
+		}
+	}
+	.comBtn{
+		background: $blue !important;
+		border-radius: 4px !important;
+		border: 1px solid $blue !important;
+		color: $white !important;
+		padding: 12px 36px !important;
+		font-weight: 700 !important;
+		box-shadow: none !important;
+		@include anim(0.2s);
+		@include max-width-1199{
+			padding: 10px 30px;
+			font-size: 14px;
+		}
+		&:hover{
+			color: $blue !important;
+			background: $white !important;
+		}
+		&.light{
+			background: $white !important;
+			color: $primary !important;
+			border-color: #EAEAEA !important;
+			&:hover{
+				background: $primary !important;
+				border-color: $primary !important;
+				color: $white !important;
+			}
+		}
+	}
+	.title_with_detail{
+		margin-bottom: 80px;
+		@include max-width-1199{
+			margin-bottom: 50px;
+		}
+		@include max-width-991{
+			margin-bottom: 40px;
+		}
+		@include max-width-767{
+			margin-bottom: 30px;
+		}
+		@include max-width-480{
+			margin-bottom: 20px;
+		}
+		.title_detail{
+			color: $grey;
+			margin-top: 25px;
+			text-align: center;
+			line-height: 30px;
+			font-size: 18px;
+			@include max-width-1199{
+				font-size: 16px;
+				line-height: 22px;
+			}
+			@include max-width-991{
+				font-size: 14px;
+				line-height: 20px;
+				margin-top: 15px;
+			}
+		}
+	}
+}
+
+.clientsSec{
+	.clientLogos{
+		li{
+			svg{
+				path{
+					@include anim(0.2s);
+				}
+			}
+			&:hover{
+				svg{
+					path{
+						fill: $primary;
+						&.whitecolor{
+							fill: #fff;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+.modal-content{
+	background-color: transparent !important;
+	modal-body{
+		background: transparent;
+	}
+}
+.slick-slider{
+	position: relative;
+	display: block;
+	box-sizing: border-box;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-touch-callout: none;
+	-khtml-user-select: none;
+	-ms-touch-action: pan-y;
+	touch-action: pan-y;
+	-webkit-tap-highlight-color: transparent;
+	.slick-list{
+		position: relative;
+		display: block;
+		overflow: hidden;
+		margin: 0;
+		padding: 0;
+	}
+	.slick-track{
+		position: relative;
+		top: 0;
+		left: 0;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.slick-slide{
+		float: left;
+		height: 100%;
+		min-height: 1px;
+	}
+}
+.bannerSec{
+	.bannerDots{
+		position: absolute;
+		right: 40px;
+		top: 50%;
+		@include trans(0, -50%);
+		z-index: 12;
+		@include max-width-991{
+			top: inherit;
+			bottom: 10px;
+			right: 15px;
+			@include trans(0, 0);
+		}
+		.slick-dots{
+			@include max-width-991{
+				display: flex;
+				flex-direction: row;
+			}
+		}
+		li{
+			list-style-type: none;
+			&.slick-active{
+				a{
+					color: #A5A4A4;
+					&:before{
+						width: 15px;
+						@include max-width-991{
+							width: 2px;
+							height: 15px;
+						}
+					}
+				}
+			}
+			a{
+				background: transparent;
+				border: 0;
+				font-size: 14px;
+				color: #535353;
+				padding: 10px;
+				cursor: pointer;
+				display: block;
+				position: relative;
+				width: 40px;
+				right: 40px;
+				@include anim(0.2s);
+				@include max-width-991{
+					right: 70px;
+					bottom: 40px;
+				}
+				&:before{
+					position: absolute;
+					content: '';
+					width: 0;
+					height: 2px;
+					background: #A5A4A4;
+					right: -15px;
+					top: 0;
+					bottom: 0;
+					margin: auto;
+					@include anim(0.2s);
+					@include max-width-991{
+						height: 0;
+						width: 2px;
+						right: 0;
+						top: -35px;
+						left: 0;
+						margin: auto;
+					}
+				}
+			}
+		}
+	}
+	.bannerSlider{
+		.slick-active{
+			.sliderBox{
+				.bannerInfo{
+					.banerText, .subscribeBox, .informativeText{
+						left: 0 !important;
+						-webkit-animation: fadeInLeft 0.6s linear;
+						animation: fadeInLeft 0.6s linear;
+					}
+				}
+				.bannerImage{
+					img{
+						right: 90px !important;
+						-webkit-animation: fadeInright 0.6s linear;
+						animation: fadeInright 0.6s linear;
+						@include max-width-1440{
+							right: 130px !important;
+						}
+						@include max-width-1199{
+							right: 50px !important;
+						}
+						@include max-width-991{
+							right: 00px !important;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@keyframes draw{
+	0%{stroke-dashoffset: 280;}
+	100%{stroke-dashoffset: 0;}
+}
+@-webkit-keyframes draw{
+	0%{stroke-dashoffset: 280;}
+	100%{stroke-dashoffset: 0;}
+}
+@-moz-keyframes draw{
+	0%{stroke-dashoffset: 280;}
+	100%{stroke-dashoffset: 0;}
+}
+@-o-keyframes draw{
+	0%{stroke-dashoffset: 280;}
+	100%{stroke-dashoffset: 0;}
+}
+
+
+@keyframes fadeInLeft{
+	0%{left: -100%;}
+	100%{left: 0;}
+}
+@-webkit-keyframes fadeInLeft{
+	0%{left: -100%;}
+	100%{left: 0;}
+}
+@-moz-keyframes fadeInLeft{
+	0%{left: -100%;}
+	100%{left: 0;}
+}
+@-o-keyframes fadeInLeft{
+	0%{left: -100%;}
+	100%{left: 0;}
+}
+
+@keyframes fadeInright{
+	0%{right: -100%;}
+	100%{right: 90px !important;}
+}
+@-webkit-keyframes fadeInright{
+	0%{right: -100%;}
+	100%{right: 90px !important;}
+}
+@-moz-keyframes fadeInright{
+	0%{right: -100%;}
+	100%{right: 90px !important;}
+}
+@-o-keyframes fadeInright{
+	0%{right: -100%;}
+	100%{right: 90px !important;}
+}
+
+@include max-width-1199{
+	@keyframes fadeInright{
+		0%{right: -100%;}
+		100%{right: 50px !important;}
+	}
+	@-webkit-keyframes fadeInright{
+		0%{right: -100%;}
+		100%{right: 50px !important;}
+	}
+	@-moz-keyframes fadeInright{
+		0%{right: -100%;}
+		100%{right: 50px !important;}
+	}
+	@-o-keyframes fadeInright{
+		0%{right: -100%;}
+		100%{right: 50px !important;}
+	}
+}
+
+@include max-width-991{
+	@keyframes fadeInright{
+		0%{right: -100%;}
+		100%{right: 0px !important;}
+	}
+	@-webkit-keyframes fadeInright{
+		0%{right: -100%;}
+		100%{right: 0px !important;}
+	}
+	@-moz-keyframes fadeInright{
+		0%{right: -100%;}
+		100%{right: 0px !important;}
+	}
+	@-o-keyframes fadeInright{
+		0%{right: -100%;}
+		100%{right: 0px !important;}
+	}
+}
