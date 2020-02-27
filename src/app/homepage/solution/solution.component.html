@@ -1,0 +1,71 @@
+<section id="solutionSection" class="solutionSection comPadding">
+	<div class="container">
+		<div class="row bd_bottom">
+			<div class="col-xl-6 col-ld-12">
+				<div class="solution_image">
+					<img src="../../assets/images/video-image.png" alt="" (click)="openModal(playVideo)">
+				</div>
+			</div>
+			<div class="col-xl-6 col-ld-12">
+				<div class="comTitle">Solution <br />we provide</div>
+				<p class="smallText">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor.</p>
+				<ul class="flex_points">
+					<li class="pointlist">Sed ut perspiciatis unde</li>
+					<li class="pointlist">Sed ut perspiciatis unde</li>
+					<li class="pointlist">Sed ut perspiciatis unde</li>
+					<li class="pointlist">Sed ut perspiciatis unde</li>
+				</ul>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
+				<div class="infoBox">
+					<div class="titleDiv">
+						<div class="svgDiv"><img src="../../assets/images/infoicon.svg" alt=""></div>
+						<p>Perspiciatis unde sed</p>
+					</div>
+					<p class="descriptionText">Lorem ipsum dolor sit amet, lorem mistawken consectetur adipiscing elit, sed do eiusmweod tempor incididunt ut amet labore et doloertre magna aliqua. Ut nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
+				</div>
+			</div>
+			<div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
+				<div class="infoBox">
+					<div class="titleDiv">
+						<div class="svgDiv"><img src="../../assets/images/infoicon.svg" alt=""></div>
+						<p>Perspiciatis unde sed</p>
+					</div>
+					<p class="descriptionText">Lorem ipsum dolor sit amet, lorem mistawken consectetur adipiscing elit, sed do eiusmweod tempor incididunt ut amet labore et doloertre magna aliqua. Ut nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
+				</div>
+			</div>
+			<div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
+				<div class="infoBox">
+					<div class="titleDiv">
+						<div class="svgDiv"><img src="../../assets/images/infoicon.svg" alt=""></div>
+						<p>Perspiciatis unde sed</p>
+					</div>
+					<p class="descriptionText">Lorem ipsum dolor sit amet, lorem mistawken consectetur adipiscing elit, sed do eiusmweod tempor incididunt ut amet labore et doloertre magna aliqua. Ut nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
+				</div>
+			</div>
+			<div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
+				<div class="infoBox">
+					<div class="titleDiv">
+						<div class="svgDiv"><img src="../../assets/images/infoicon.svg" alt=""></div>
+						<p>Perspiciatis unde sed</p>
+					</div>
+					<p class="descriptionText">Lorem ipsum dolor sit amet, lorem mistawken consectetur adipiscing elit, sed do eiusmweod tempor incididunt ut amet labore et doloertre magna aliqua. Ut nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<ng-template #playVideo>
+	<div class="playVideo">
+		<div class="modal-body">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="modalRef.hide()">
+				<p aria-hidden="true">&times;</p>
+			</button>
+			<iframe width="100%" height="315" src="https://www.youtube.com/embed/owsfdh4gxyc" frameborder="0" allowfullscreen frameborder="0"></iframe>
+		</div>
+	</div>
+</ng-template>
+

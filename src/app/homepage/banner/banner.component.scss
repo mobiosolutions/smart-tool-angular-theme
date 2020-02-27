@@ -1,0 +1,205 @@
+@import './src/styles.scss';
+
+.bannerSec{
+	background: $primary;
+	position: relative;
+	overflow: hidden;
+	&:before{
+		position: absolute;
+		content: '';
+		left: 0;
+		bottom: 100px;
+		width: 150px;
+		height: 145px;
+		background: url('../../../assets/images/banner_pattern.png') no-repeat;
+		@include max-width-1440{
+			display: none;
+		}
+	}
+	&:after{
+		position: absolute;
+		content: '';
+		right: 0;
+		top: 0px;
+		width: 150px;
+		height: 145px;
+		background: url('../../../assets/images/banner_pattern.png') no-repeat;
+		@include max-width-1440{
+			display: none;
+		}
+	}
+	.scrollDiv{
+		position: absolute;
+		bottom: 40px;
+		z-index: 999;
+		display: flex;
+		align-items: center;
+		color: #48484D;
+		font-size: 18px;
+		img{
+			margin-right: 15px;
+		}
+		@include max-width-1199{
+			bottom: 20px;
+		}
+		@include max-width-767{
+			font-size: 14px;
+		}
+	}
+	.bannerSlider{
+		@include max-width-1199{
+			padding: 40px 0;
+		}
+		@include max-width-767{
+			padding: 70px 0;
+		}
+		.sliderBox{
+			position: relative;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			.bannerInfo{
+				max-width: 50%;
+				@include max-width-1440{
+					max-width: 42%;
+				}
+				@include max-width-767{
+					max-width: 100%;
+					margin: auto;
+					margin-bottom: 40px;
+				}
+				.banerText{
+					font-size: 66px;
+					line-height: 86px;
+					color: $white;
+					left: -1000px;
+					position: relative;
+					@include max-width-1440{
+						font-size: 50px;
+						line-height: 64px;
+					}
+					@include max-width-1199{
+						font-size: 32px;
+						line-height: 40px;
+					}
+					@include max-width-991{
+						font-size: 28px;
+						line-height: 34px;
+					}
+					@include max-width-767{
+						text-align: center;
+					}
+				}
+				.subscribeBox{
+					margin: 30px 0;
+					display: flex;
+					align-items: center;
+					left: -1000px;
+					position: relative;
+					max-width: 525px;
+					@include max-width-1199{
+						margin: 20px 0;
+					}
+					@include max-width-480{
+						flex-direction: column;
+						max-width: 100%;
+					}
+					.inputField{
+						flex-grow: 1;
+						background: #2C2C30;
+						border-radius: 4px;
+						height: 100%;
+						padding: 10px 15px;
+						border: 0;
+						height: 60px;
+						color: $white;
+						@include max-width-1440{
+							height: 48px;
+						}
+						@include max-width-480{
+							width: 100%;
+						}
+					}
+					.btn{
+						margin-left: 15px;
+						line-height: 58px;
+						padding-top: 0;
+						padding-bottom: 0;
+						line-height: 22px;
+						height: 48px;
+						@include max-width-1440{
+						}
+						&:hover{
+							background: transparent;
+						}
+						@include max-width-480{
+							margin-top: 10px;
+						}
+					}
+				}
+				.informativeText{
+					color: #5E5D64;
+					left: -1000px;
+					position: relative;
+					font-size: 18px;
+					line-height: 24px;
+					@include max-width-1440{
+						font-size: 16px;
+					}
+					@include max-width-1199{
+						font-size: 14px;
+					}
+					@include max-width-767{
+						text-align: center;
+					}
+				}
+			}
+			.bannerImage{
+				position: relative;
+				@include max-width-767{
+					display: none;
+				}
+				.layer1{
+					position: absolute;
+					left: -100px;
+					bottom: 10px;
+					img{
+						@include max-width-1199{
+							width: 70%;
+						}
+						@include max-width-991{
+							width: 50%;
+						}
+					}
+				}
+				.layer2{
+					position: absolute;
+					right: -100px;
+					top: 10px;
+					@include max-width-1199{
+						img{
+							width: 70%;
+						}
+					}
+					@include max-width-991{
+						display: none;
+					}
+				}
+				img{
+					right: -1000px;
+					position: relative;
+					max-width: 470px;
+					@include max-width-1440{
+						max-width: 400px;
+					}
+					@include max-width-1199{
+						max-width: 340px;
+					}
+					@include max-width-991{
+						max-width: 280px;
+					}
+				}
+			}
+		}
+	}
+}

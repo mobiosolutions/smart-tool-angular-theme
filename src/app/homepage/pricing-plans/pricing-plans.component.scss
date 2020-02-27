@@ -1,0 +1,168 @@
+@import './src/styles.scss';
+
+.pricingSec{
+	background: rgba(30, 30, 33, 0.06);
+	.title_with_detail{
+		margin-bottom: 0;
+	}
+	.pricingList{
+		position: relative;
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		&:after{
+			position: absolute;
+			content: '';
+			width: 150px;
+			height: 150px;
+			left: -40px;
+			bottom: -36px;
+			z-index: -1;
+			background: url('../../../assets/images/cross_pattern.svg') no-repeat;
+		}
+		.priceBox{
+			width: calc(33.33% - 30px);
+			margin: 0 15px;
+			border-radius: 4px;
+			overflow: hidden;
+			background: $white;
+			padding: 50px 60px;
+			margin-top: 40px;
+			position: relative;
+			@include max-width-1440{
+				padding: 30px;
+			}
+			@include max-width-1199{
+				width: calc(50% - 30px);
+			}
+			@include max-width-767{
+				width: 100%;
+				padding: 20px 15px;
+			}
+			&.professional{
+				.title{
+					color: #FF6539;
+				}
+				.popular{
+					opacity: 1;
+					visibility: visible;
+				}
+			}
+			.popular{
+				position: absolute;
+				left: 50%;
+				top: 20px;
+				@include trans(-50%, 0);
+				display: inline-block;
+				background: $blue;
+				border-radius: 30px;
+				color: $white;
+				text-transform: uppercase;
+				font-size: 10px;
+				padding: 5px 18px;
+				opacity: 0;
+				visibility: hidden;
+				@include max-width-1440{
+					top: 12px;
+				}
+			}
+			.title{
+				font-size: 36px;
+				font-weight: 700;
+				line-height: 48px;
+				color: $blue;
+				text-align: center;
+				margin-top: 10px;
+				@include max-width-1440{
+					font-size: 30px;
+					line-height: 38px;
+				}
+				@include max-width-1199{
+					margin-top: 20px;
+					font-size: 28px;
+					line-height: 36px;
+				}
+				@include max-width-991{
+					font-size: 26px;
+					line-height: 34px;
+				}
+			}
+			.price{
+				text-align: center;
+				color: #000;
+				font-size: 66px;
+				line-height: 72px;
+				font-weight: 700;
+				margin-top: 20px;
+				span{
+					display: inline-block;
+					font-size: 18px;
+					line-height: 28px;
+					font-weight: 400;
+					padding-left: 5px;
+				}
+				@include max-width-1440{
+					font-size: 56px;
+					line-height: 62px;
+				}
+				@include max-width-991{
+					font-size: 40px;
+					line-height: 50px;
+				}
+			}
+			.infoPricing{
+				margin: 40px 0;
+				font-size: 14px;
+				line-height: 28px;
+				@include max-width-1440{
+					margin: 25px 0;
+					line-height: 22px;
+				}
+			}
+			.pricingPoints{
+				display: flex;
+				flex-direction: column;
+				margin-bottom: 55px;
+				@include max-width-1440{
+					margin-bottom: 30px;
+				}
+				li{
+					position: relative;
+					padding-left: 23px;
+					list-style-type: none;
+					font-size: 18px;
+					line-height: 24px;
+					font-weight: 700;
+					margin-bottom: 15px;
+					color: #000;
+					@include max-width-1440{
+						font-size: 16px;
+					}
+					@include max-width-991{
+						margin-bottom: 10px;
+						font-size: 14px;
+						line-height: 20px;
+					}
+					&:before{
+						position: absolute;
+						content: '';
+						left: 0;
+						top: 10px;
+						width: 8px;
+						height: 8px;
+						border-radius: 50%;
+						background: $blue;
+						@include max-width-991{
+							top: 8px;
+							width: 6px;
+							height: 6px;
+						}
+					}
+					&.notApplicable{
+						color: #D8D8D8;
+					}
+				}
+			}
+		}
+	}
+}

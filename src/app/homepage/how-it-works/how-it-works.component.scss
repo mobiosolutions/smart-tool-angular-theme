@@ -1,0 +1,154 @@
+@import './src/styles.scss';
+
+.howitworks{
+	background: $primary;
+	max-width: 1625px;
+	margin: 0 auto;
+	overflow: hidden;	
+	.comTitle{
+		color: $white;
+	}
+	.howBlocksSection{
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+	}
+	.howitBoxes{
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		align-items: center;
+		justify-content: center;
+		width: calc(25% - 30px);
+		position: relative;
+		@include max-width-1199{
+			width: calc(50% - 30px);
+			margin-bottom: 50px;
+		}
+		@include max-width-767{
+			width: 100%;
+			display: flex;
+			flex-direction: row;
+		}
+		@include max-width-480{
+			width: 100%;
+			flex-direction: column;
+		}
+		&:not(:last-child){
+			&:after{
+				position: absolute;
+				content: '';
+				right: -20px;
+				bottom: -120px;
+				width: 1px;
+				height: 1000%;
+				background: rgba(112, 112, 112, 0.12);
+				@include max-width-1199{
+					display: none;
+				}
+			}
+		}
+		&:nth-of-type(even){
+			flex-direction: column-reverse;
+			@include max-width-1199{
+				flex-direction: column;
+			}
+			@include max-width-767{
+				flex-direction: row;
+			}
+			@include max-width-480{
+				flex-direction: column;
+			}
+			.howImage{
+				margin-top: 40px;
+				margin-bottom: 0;
+				@include max-width-1199{
+					margin-bottom: 20px;
+					margin-top: 0;
+				}
+			}
+		}
+		&:hover{
+			svg{
+				-webkit-animation: draw 3s linear alternate infinite;
+				animation: draw 3s linear alternate infinite;
+			}
+		}
+		svg{
+			stroke-linecap: round;
+			stroke-linejoin: round;
+			stroke-dasharray: 280;
+			stroke-dashoffset: 0;
+		}
+		.bottomDiv{
+			@include max-width-767{
+				padding-left: 20px;
+				width: calc(100% - 200px);
+			}
+			@include max-width-480{
+				width: 100%;
+				padding-left: 0;
+			}
+		}
+		.count{
+			position: absolute;
+			top: -25px;
+			right: -60px;
+			width: 45px;
+			height: 45px;
+			border-radius: 50%;
+			border: 2px solid #273960;
+			color: $blue;
+			font-weight: 700;
+			font-size: 18px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			@include max-width-767{
+				right: inherit;
+				left: -60px;
+			}
+			@include max-width-480{
+				top: -15px;
+			}
+		}
+		.howImage{
+			margin-bottom: 40px;
+			position: relative;
+			@include max-width-1199{
+				margin-bottom: 20px;
+				margin-top: 0;
+			}
+		}
+		.howTitle{
+			color: $white;
+			font-size: 18px;
+			line-height: 22px;
+			text-align: center;
+			@include max-width-767{
+				text-align: left;
+				font-size: 16px;
+			}
+			@include max-width-480{
+				text-align: center;
+			}
+		}
+		.how_description{
+			color: $grey;
+			font-size: 14px;
+			line-height: 28px;
+			margin-top: 20px;
+			text-align: center;
+			@include max-width-1199{
+				margin-top: 10px;
+			}
+			@include max-width-767{
+				text-align: left;
+				line-height: 20px;
+			}
+			@include max-width-480{
+				text-align: center;
+			}
+		}
+	}
+}

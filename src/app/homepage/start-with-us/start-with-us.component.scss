@@ -1,0 +1,76 @@
+@import './src/styles.scss';
+
+.startwithUs{
+	background: $blue;
+	padding: 50px 0;
+	@include max-width-991{
+		padding: 30px 0;
+	}
+	.startSecText{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		@include max-width-767{
+			flex-direction: column;
+		}
+		.startText{
+			color: $white;
+			font-size: 36px;
+			line-height: 48px;
+			font-weight: 700;
+			margin-right: 80px;
+			margin-bottom: 0;
+			@include max-width-1440{
+				font-size: 30px;
+				line-height: 40px;
+				margin-right: 60px;
+			}
+			@include max-width-1199{
+				font-size: 26px;
+				line-height: 34px;
+			}
+			@include max-width-991{
+				font-size: 20px;
+				line-height: 28px;
+				margin-right: 20px;
+			}
+			@include max-width-767{
+				margin-right: 0;
+				margin-bottom: 20px;
+				font-size: 18px;
+				line-height: 26px;
+			}
+		}
+		.btnGroup{
+			display: flex;
+			align-content: center;
+			.btn{
+				margin-left: 20px;
+				&.comBtn{
+					background: $white !important;
+					color: $blue !important;
+					border-color: $white !important;
+					@include max-width-991{
+						padding: 10px 30px;
+						margin-left: 10px;
+					}
+					@include max-width-767{
+						margin: 0 5px;
+					}
+					&:hover{
+						background: transparent !important;
+						color: $white !important;
+					}
+					&.light{
+						background: $blue !important;
+						color: $white !important;
+						&:hover{
+							background: $white !important;
+							color: $blue !important;
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,157 @@
+@import './src/styles.scss';
+
+.solutionSection{
+	.bd_bottom{
+		padding-bottom: 70px;
+		border-bottom: 1px solid #E4E4E4;
+		@include max-width-767{
+			padding-bottom: 50px;
+		}
+	}
+	.solution_image{
+		position: relative;
+		z-index: 1;
+		cursor: pointer;
+		@include max-width-1199{
+			text-align: center;
+			margin-bottom: 15px;
+		}
+		&:before{
+			position: absolute;
+			content: '';
+			width: 	84px;
+			height: 84px;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			margin: auto;
+			z-index: 0;
+			background: url('../../../assets/images/play_button.png') no-repeat;
+			background-size: cover;
+		}
+		img{
+			width: 100%;
+			@include max-width-1199{
+				max-width: 500px;
+			}
+		}
+	}
+	.comTitle{
+		text-align: left;
+		@include max-width-1199{
+			text-align: center;
+			br{
+				display: none;
+			}
+		}
+	}
+	.smallText{
+		font-size: 18px;
+		line-height: 30px;
+		margin-top: 30px;
+		@include max-width-1440{
+			font-size: 16px;
+			line-height: 26px;
+		}
+	}
+	.flex_points{
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: row;
+		justify-content: space-between;
+		margin-top: 10px;
+		.pointlist{
+			width: 49%;
+			padding-left: 35px;
+			position: relative;
+			list-style-type: none;
+			font-weight: 700;
+			margin-top: 20px;
+			@include max-width-991{
+				width: 100%;
+				margin-top: 15px;
+			}
+			&:before{
+				position: absolute;
+				content: '';
+				left: 0;
+				top: 2px;
+				width: 20px;
+				height: 20px;
+				border: 4px solid $secondary;
+				border-radius: 50%;
+				@include max-width-991{
+					top: 5px;
+					width: 15px;
+					height: 15px;
+				}
+			}
+		}
+	}
+	.infoBox{
+		margin-top: 40px;
+		.titleDiv{
+			display: flex;
+			align-items: center;
+			margin-bottom: 10px;
+			.svgDiv{
+				width: 42px;
+				height: 42px;
+				border-radius: 50%;
+				background: #FFEFEB;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+			p{
+				font-size: 18px;
+				line-height: 22px;
+				color: $primary;
+				font-weight: 700;
+				margin-left: 10px;
+			}
+		}
+		.descriptionText{
+			font-size: 14px;
+			line-height: 28px;
+			@include max-width-767{
+				line-height: 22px;
+			}
+		}
+	}
+}
+
+.playVideo{
+	.modal-dialog{
+		max-width: 600px;
+	}
+	.modal-content{
+		background: transparent;
+	}
+	.modal-body{
+		position: relative;
+		padding: 0;
+		.close{
+			position: absolute;
+			right: -15px;
+			top: -10px;
+			width: 30px;
+			height: 30px;
+			background: $white;
+			opacity: 1;
+			border-radius: 50%;
+			padding: 0;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			&:hover{
+				opacity: 1;
+			}
+			span{
+				font-size: 20px;
+				line-height: 20px;
+			}
+		}
+	}
+}
